@@ -1,0 +1,56 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Login</title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/custom.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <div class="btn-group-lg" id="headButtons">
+            <button type="button"><a asp-action="Cart">Cart</a></button>
+            <button type="button"><a asp-action="Login">Log in</a></button>
+            <button type="button"><a asp-controller="Customer" asp-action="Register">Register</a></button>
+        </div>
+        <div>
+            <a asp-action="Index"><img id="catLogo" src="https://i.imgur.com/l8W3klT.png" alt="Cats&Plants Logo" /></a>
+        </div>
+    </header>
+    <div id="mainButtons">
+        <button type="button"><a asp-action="Plants">Plants</a></button>
+        <button type="button"><a asp-action="Vivariums">Vivariums</a></button>
+        <button type="button"><a asp-action="Supplies">Supplies</a></button>
+        <button type="button"><a asp-action="Gallery">Gallery</a></button>
+        <button type="button"><a asp-action="Maintenance">Maintenance</a></button>
+        <button type="button"><a asp-action="FAQ">FAQ</a></button>
+        <button type="button"><a asp-action="ContactUs">Contact Us</a></button>
+    </div> <br />
+    <div>
+        <form method="post">
+            <table id="tableForm">
+                <tr>
+                    <td><label for="Email">Email:</label></td>
+                    <td><input type="text" id="Email" name="Email" value="" placeholder="john@example.com" /></td>
+                </tr>
+                <tr>
+                    <td><label for="Password">Password:</label></td>
+                    <td><input type="password" id="Password" name="Password" value="" /></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" value="Log in" /></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><a asp-action="ForgotPassword">Forgot Password</a> | <a asp-action="Signup">Sign Up Instead</a></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

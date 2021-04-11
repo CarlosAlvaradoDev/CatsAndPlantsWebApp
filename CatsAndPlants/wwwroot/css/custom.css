@@ -1,0 +1,33 @@
+﻿body {
+    background-image: url('https://i.imgur.com/qCi0bMm.jpg' );
+}
+
+#catLogo {
+    display: block;
+    margin: auto;
+    height: 130px;
+}
+
+#headButtons {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#mainButtons {
+    display: flex;
+    justify-content: center;
+}
+
+#slideshow {
+    display: block;
+    margin: auto;
+    height: 450px;
+}
+
+#picChoice {
+    display: flex;
+    justify-content: center;
+}
+#tableForm {
+    margin: auto;
+}

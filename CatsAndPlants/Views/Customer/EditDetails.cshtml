@@ -1,0 +1,102 @@
+﻿@model Customer
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Register</title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/custom.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <div class="btn-group-lg" id="headButtons">
+            <button type="button"><a asp-action="Cart">Cart</a></button>
+            <button type="button"><a asp-controller="Home" asp-action="Login">Log in</a></button>
+            <button type="button"><a asp-controller="Customer" asp-action="Register">Register</a></button>
+        </div>
+        <div>
+            <a asp-controller="Home" asp-action="Index"><img id="catLogo" src="https://i.imgur.com/l8W3klT.png" alt="Cats&Plants Logo" /></a>
+        </div>
+    </header>
+    <div id="mainButtons">
+        <button type="button"><a asp-action="Plants">Plants</a></button>
+        <button type="button"><a asp-action="Vivariums">Vivariums</a></button>
+        <button type="button"><a asp-action="Supplies">Supplies</a></button>
+        <button type="button"><a asp-action="Gallery">Gallery</a></button>
+        <button type="button"><a asp-action="Maintenance">Maintenance</a></button>
+        <button type="button"><a asp-action="FAQ">FAQ</a></button>
+        <button type="button"><a asp-action="ContactUs">Contact Us</a></button>
+    </div> <br />
+    <div asp-validation-summary="All">
+        <form asp-controller="Customer" asp-action="EditDetails" method="post">
+            <table id="tableForm">
+                <tr>
+                    <td><label for="firstName">First Name:</label></td>
+                    <td><input asp-for="FirstName" type="text" id="firstName" /></td>
+                </tr>
+                <tr>
+                    <td><label for="lastName">Last Name:</label></td>
+                    <td><input asp-for="LastName" type="text" id="lastName" /></td>
+                </tr>
+                <tr>
+                    <td><label for="Email">Email:</label></td>
+                    <td><input asp-for="Email" type="text" id="Email" placeholder="john@example.com" /></td>
+                </tr>
+                <tr>
+                    <td><label for="Password">Password:</label></td>
+                    <td><input asp-for="Password" type="password" id="Password" /></td>
+                </tr>
+                <tr>
+                    <td><label for="phone">Phone:</label></td>
+                    <td><input asp-for="Phone" type="tel" id="phone" /></td>
+                </tr>
+                <tr>
+                    <td><label for="shipadd">Shipping Address:</label></td>
+                    <td><input asp-for="ShipAddress" type="text" id="shipadd" /></td>
+                </tr>
+                <tr>
+                    <td><label for="shipcity">City:</label></td>
+                    <td><input asp-for="ShipCity" type="text" id="shipcity" /></td>
+                </tr>
+                <tr>
+                    <td><label for="shipstate">State:</label></td>
+                    <td><input asp-for="ShipState" type="text" id="shipstate" /></td>
+                </tr>
+                <tr>
+                    <td><label for="shippostal">Postal Code:</label></td>
+                    <td><input asp-for="ShipPostal" type="text" id="shippostal" /></td>
+                </tr>
+                <tr>
+                    <td><label for="billadd">Billing Address:</label></td>
+                    <td><input asp-for="BillAddress" type="text" id="billadd" /></td>
+                    <td><label for="same">Same as Shipping Address?</label></td>
+                    <td><input id="same" type="checkbox" value="true" /></td>
+                </tr>
+                <tr>
+                    <td><label for="billcity">City:</label></td>
+                    <td><input asp-for="BillCity" type="text" id="billcity" /></td>
+                </tr>
+                <tr>
+                    <td><label for="billstate">State:</label></td>
+                    <td><input asp-for="BillState" type="text" id="billstate" /></td>
+                </tr>
+                <tr>
+                    <td><label for="billpostal">Postal Code:</label></td>
+                    <td><input asp-for="BillPostal" type="text" id="billpostal" /></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" value="Confirm Changes" class="btn btn-success"/></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>
+
