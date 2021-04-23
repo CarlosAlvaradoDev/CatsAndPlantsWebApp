@@ -1,0 +1,23 @@
+﻿@model IQueryable<Customer>
+
+<ul>
+    @foreach (Customer c in Model)
+    {
+    <li>
+        @c.CustomerId 
+        @c.FirstName
+        @c.LastName
+        @c.Email
+        @c.Password
+        @c.Phone
+        @c.ShipAddress
+        @c.ShipCity
+        @c.ShipState
+        @c.ShipPostal 
+        @c.BillAddress
+        @c.BillCity
+        @c.BillState
+        @c.BillPostal 
+    </li>
+    }
+</ul>

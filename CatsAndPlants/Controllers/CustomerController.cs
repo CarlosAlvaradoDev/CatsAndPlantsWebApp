@@ -9,6 +9,22 @@ namespace CatsAndPlants.Controllers
 {
     public class CustomerController : Controller
     {
+        // F i e l d s  &  P r o p e r t i e s
+        private ICustomerRepository _repository;
+
+        // C o n s t r u c t o r s
+        public CustomerController(ICustomerRepository repository)
+        {
+            _repository = repository;
+        }
+
+        // M e t h o d s
+        public IActionResult Index()
+        {
+            IQueryable<Customer> customers = _repository.GetAllCustomers();
+            return View(customers);
+        }
+
         [HttpGet]
         public IActionResult Register()
         {
@@ -25,9 +41,10 @@ namespace CatsAndPlants.Controllers
             return View();
         }
 
-        public IActionResult Details(Customer form)
+        public IActionResult Details(int id)
         {
-            return View(form);
+            Customer c = _repository.GetCustomerById(id);
+            return View(c);
         }
 
         [HttpGet]
