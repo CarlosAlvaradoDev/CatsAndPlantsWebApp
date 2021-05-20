@@ -2,126 +2,194 @@
 
 @{
     Layout = null;
- }
-    <head>
-        <meta charset="utf-8" />
-        <title>Register</title>
-        <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
-        <link href="~/css/custom.css" rel="stylesheet" />
-    </head>
+}
+<head>
+    <meta charset="utf-8" />
+    <title>Register</title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/custom.css" rel="stylesheet" />
+</head>
+<fieldset>
+    <legend>Customer Details</legend>
 
-<h1 class=" text-center">Customer Details</h1>
+    <table class="container table-striped w-auto table">
+        <tr>
+            <td>
+                First Name:
+            </td>
+            <td>
+                @Model.FirstName
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Last Name:
+            </td>
+            <td>
+                @Model.LastName
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Email:
+            </td>
+            <td>
+                @Model.Email
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Password:
+            </td>
+            <td>
+                @Model.Password
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Phone:
+            </td>
+            <td>
+                @Model.Phone
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Shipping Address:
+            </td>
+            <td>
+                @Model.ShipAddress
+            </td>
+        </tr>
+        <tr>
+            <td>
+                City:
+            </td>
+            <td>
+                @Model.ShipCity
+            </td>
+        </tr>
+        <tr>
+            <td>
+                State:
+            </td>
+            <td>
+                @Model.ShipState
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Postal Code:
+            </td>
+            <td>
+                @Model.ShipPostal
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Billing Address:
+            </td>
+            <td>
+                @Model.BillAddress
+            </td>
+        </tr>
+        <tr>
+            <td>
+                City:
+            </td>
+            <td>
+                @Model.BillCity
+            </td>
+        </tr>
+        <tr>
+            <td>
+                State:
+            </td>
+            <td>
+                @Model.BillState
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Postal Code
+            </td>
+            <td>
+                @Model.BillPostal
+            </td>
+        </tr>
+        <tr>
+            <td>
+            </td>
+            <td>
+                <a asp-controller="Customer" asp-action="EditDetails" asp-route-id="@Model.CustomerId" class=" btn btn-warning"> Edit </a>
+                <a asp-controller="Customer" asp-action="Index" class=" btn btn-warning"> Back </a>
+            </td>
+        </tr>
+    </table>
+</fieldset>
 
-<table class="container table-striped w-auto table">
-    <tr>
-        <td>
-            First Name:
-        </td>
-        <td>
-            @Model.FirstName
-        </td>
-    </tr>
-    <tr>
-        <td>
-            Last Name:
-        </td>
-        <td>
-            @Model.LastName
-        </td>
-    </tr>
-    <tr>
-        <td>
-            Email:
-        </td>
-        <td>
-            @Model.Email
-        </td>
-    </tr>
-    <tr>
-        <td>
-            Password:
-        </td>
-        <td>
-            @Model.Password
-        </td>
-    </tr>
-    <tr>
-        <td>
-            Phone:
-        </td>
-        <td>
-            @Model.Phone
-        </td>
-    </tr>
-    <tr>
-        <td>
-            Shipping Address:
-        </td>
-        <td>
-            @Model.ShipAddress 
-        </td>
-    </tr>
-    <tr>
-        <td>
-            City:
-        </td>
-        <td>
-            @Model.ShipCity
-        </td>
-    </tr>
-    <tr>
-        <td>
-            State:
-        </td>
-        <td>
-            @Model.ShipState
-        </td>
-    </tr>
-    <tr>
-        <td>
-            Postal Code:
-        </td>
-        <td>
-            @Model.ShipPostal
-        </td>
-    </tr>
-    <tr>
-        <td>
-            Billing Address:
-        </td>
-        <td>
-            @Model.BillAddress
-        </td>
-    </tr>
-    <tr>
-        <td>
-            City:
-        </td>
-        <td>
-            @Model.BillCity
-        </td>
-    </tr>
-    <tr>
-        <td>
-            State:
-        </td>
-        <td>
-            @Model.BillState
-        </td>
-    </tr>
-    <tr>
-        <td>
-            Postal Code
-        </td>
-        <td>
-            @Model.BillPostal
-        </td>
-    </tr>
-    <tr>
-        <td>
-        </td>
-        <td>
-            <a asp-controller="Customer" asp-action="EditDetails" asp-route-id="10" class=" btn btn-warning"> Edit </a>
-        </td>
-    </tr>
-</table>
+<fieldset>
+    <legend> Orders </legend>
+
+    <table class="container table-striped w-auto table">
+        <thead>
+            <tr>
+                <th>
+                    Order Date:
+                </th>
+                <th>
+                    Total Cost:
+                </th>
+                <th>
+                    Order Id:
+                </th>
+                <th>
+                    Freight:
+                </th>
+                <th>
+                    Shipping Address:
+                </th>
+                <th>
+                    Shipping City:
+                </th>
+                <th>
+                    Shipping State:
+                </th>
+                <th>
+                    Shipping Postal:
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Order o in Model.Orders)
+            {
+            <tr>
+                <td>
+                    @o.OrderDate
+                </td>
+                <td>
+                    @o.TotalCost.ToString("C")
+                </td>
+                <td>
+                    @o.OrderId
+                </td>
+                <td>
+                    @o.Freight.ToString("N3")
+                </td>
+                <td>
+                    @o.ShipAddress
+                </td>
+                <td>
+                    @o.ShipCity
+                </td>
+                <td>
+                    @o.ShipState
+                </td>
+                <td>
+                    @o.ShipPostal
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</fieldset>

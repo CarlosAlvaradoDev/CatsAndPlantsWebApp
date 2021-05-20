@@ -1,0 +1,124 @@
+﻿@model Customer
+
+@{
+    Layout = null;
+ }
+    <head>
+        <meta charset="utf-8" />
+        <title>Register</title>
+        <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="~/css/custom.css" rel="stylesheet" />
+    </head>
+
+<h1 class=" text-center">Delete Customer</h1>
+
+<table class="container table-striped w-auto table">
+    <tr>
+        <td>
+            First Name:
+        </td>
+        <td>
+            @Model.FirstName
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Last Name:
+        </td>
+        <td>
+            @Model.LastName
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Email:
+        </td>
+        <td>
+            @Model.Email
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Password:
+        </td>
+        <td>
+            @Model.Password
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Phone:
+        </td>
+        <td>
+            @Model.Phone
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Shipping Address:
+        </td>
+        <td>
+            @Model.ShipAddress 
+        </td>
+    </tr>
+    <tr>
+        <td>
+            City:
+        </td>
+        <td>
+            @Model.ShipCity
+        </td>
+    </tr>
+    <tr>
+        <td>
+            State:
+        </td>
+        <td>
+            @Model.ShipState
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Postal Code:
+        </td>
+        <td>
+            @Model.ShipPostal
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Billing Address:
+        </td>
+        <td>
+            @Model.BillAddress
+        </td>
+    </tr>
+    <tr>
+        <td>
+            City:
+        </td>
+        <td>
+            @Model.BillCity
+        </td>
+    </tr>
+    <tr>
+        <td>
+            State:
+        </td>
+        <td>
+            @Model.BillState
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Postal Code
+        </td>
+        <td>
+            @Model.BillPostal
+        </td>
+    </tr>
+</table>
+<form method="post">
+    <input type="hidden" />
+    <input type="submit" value="Delete" />
+</form>

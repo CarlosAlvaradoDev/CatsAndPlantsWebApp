@@ -19,12 +19,21 @@ namespace CatsAndPlants.Controllers
         }
 
         // M e t h o d s
+        // R E A D
         public IActionResult Index()
         {
             IQueryable<Customer> customers = _repository.GetAllCustomers();
             return View(customers);
         }
 
+
+        public IActionResult Details(int id)
+        {
+            Customer c = _repository.GetCustomerById(id);
+            return View(c);
+        }
+
+        // C R E A T E
         [HttpGet]
         public IActionResult Register()
         {
@@ -36,36 +45,18 @@ namespace CatsAndPlants.Controllers
         {
             if (ModelState.IsValid)
             {
-               return RedirectToAction("Details", form);
+                _repository.Create(form);
+                return RedirectToAction("Details", new { id = form.CustomerId });
             }
             return View();
         }
 
-        public IActionResult Details(int id)
-        {
-            Customer c = _repository.GetCustomerById(id);
-            return View(c);
-        }
-
+        // U P D A T E
         [HttpGet]
         public IActionResult EditDetails(int id)
         {
-            // Faking out going to the database and getting "id" details.
-            Customer charlies = new Customer();
-            charlies.CustomerId = id;
-            charlies.FirstName = "Charlies";
-            charlies.LastName = "Avocado";
-            charlies.Email = "c@c.com";
-            charlies.Phone = "123";
-            charlies.ShipAddress = "123 North";
-            charlies.ShipCity = "Phoenix";
-            charlies.ShipState = "AZ";
-            charlies.ShipPostal = 52234;
-            charlies.BillAddress = "123 North";
-            charlies.BillCity = "Phoenix";
-            charlies.BillState = "AZ";
-            charlies.BillPostal = 52234;
-            return View(charlies);
+            Customer c = _repository.GetCustomerById(id);
+            return View(c);
         }
 
         [HttpPost]
@@ -73,9 +64,25 @@ namespace CatsAndPlants.Controllers
         {
             if (ModelState.IsValid)
             {
-                return RedirectToAction("Details", updatedDetails);
+                _repository.Update(updatedDetails);
+                return RedirectToAction("Details", new { id = updatedDetails.CustomerId });
             }
             return View(updatedDetails);
+        }
+
+        // D E L E T E
+        [HttpGet]
+        public IActionResult Delete(int id)
+        {
+            Customer c = _repository.GetCustomerById(id);
+            return View(c);
+        }
+
+        [HttpPost]
+        public IActionResult Delete(Customer c)
+        {
+            _repository.Delete(c.CustomerId);
+            return RedirectToAction("Index");
         }
     }
 }

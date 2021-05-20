@@ -1,42 +1,13 @@
 ﻿@{
-    Layout = null;
+    Layout = Layout;
 }
 
-<!DOCTYPE html>
-
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="utf-8" />
-    <title>Cats&Plants</title>
-    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="~/css/custom.css" rel="stylesheet" />
-</head>
-<body>
-    <header>
-        <div class="btn-group-lg" id="headButtons">
-            <button type="button"><a asp-action="Cart">Cart</a></button>
-            <button type="button"><a asp-action="Login">Log in</a></button>
-            <button type="button"><a asp-controller="Customer" asp-action="Register">Register</a></button>
-        </div>
-        <a asp-action="Index"><img id="catLogo" src="https://i.imgur.com/l8W3klT.png" alt="Cats&Plants Logo" /></a>
-    </header>
-    <div id="mainButtons">
-        <button type="button"><a asp-action="Plants">Plants</a></button>
-        <button type="button"><a asp-action="Vivariums">Vivariums</a></button>
-        <button type="button"><a asp-action="Supplies">Supplies</a></button>
-        <button type="button"><a asp-action="Gallery">Gallery</a></button>
-        <button type="button"><a asp-action="Maintenance">Maintenance</a></button>
-        <button type="button"><a asp-action="FAQ">FAQ</a></button>
-        <button type="button"><a asp-action="ContactUs">Contact Us</a></button>
-    </div> <br />
-    <img id="slideshow" src="https://i.imgur.com/hvFxSxp.jpg" alt="Vivarium Image" /> <br />
-    <div id="picChoice">
-        <form method="post">
-            <input type="radio" name="picture" id="1" />
-            <input type="radio" name="picture" id="2" checked="checked" />
-            <input type="radio" name="picture" id="3" />
-        </form>
-    </div>
-
-</body>
-</html>
+<img id="slideshow" src="https://i.imgur.com/hvFxSxp.jpg" alt="Vivarium Image" />
+<br />
+<div id="picChoice">
+    <form method="post">
+        <input type="radio" name="picture" id="1" />
+        <input type="radio" name="picture" id="2" checked="checked" />
+        <input type="radio" name="picture" id="3" />
+    </form>
+</div>

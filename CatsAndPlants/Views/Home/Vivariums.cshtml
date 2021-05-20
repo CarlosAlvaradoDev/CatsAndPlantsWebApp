@@ -1,0 +1,46 @@
+﻿@model IQueryable<Product>
+
+@{
+    Layout = Layout;
+}
+
+@foreach (Product product in Model)
+{
+    <div class="card text-center">
+        <ul>
+            <li class="img align-content-center list-unstyled">
+                <div id="proPics">
+                    <img src="@product.PicUrl" alt="Product Picture" />
+                </div>
+            </li>
+            <li class="badge- badge-pill badge-primary text-center list-unstyled">
+                <div class="flex-row">
+                    <strong>@product.Name</strong>
+                </div>
+
+                <div class="flex-row">
+                    <strong>Description:</strong> @product.Description
+                </div>
+
+                <div class="flex-row">
+                    <strong>Price:</strong> @product.Price.ToString("C")
+                </div>
+            </li>
+            <li class="list-unstyled">
+                <form id="@product.ProductId" asp-page="/Cart" method="post">
+                    <input type="hidden" name="returnUrl"
+                           value="@ViewContext.HttpContext.Request.PathAndQuery()" />
+                    <span class="card-text p-1">
+
+                        <button type="submit"
+                                class="btn btn-success btn-sm">
+                            Add To Cart
+                        </button>
+                    </span>
+                </form>
+            </li>
+        </ul>
+    </div>
+
+
+}

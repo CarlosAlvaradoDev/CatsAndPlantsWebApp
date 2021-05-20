@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - TestCatsAndPlants</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/custom.css" />
+</head>
+<body>
+    <div id="backg">
+    </div>
+    <header>
+        <div class="btn-group-lg" id="headButtons">
+            <button type="button"><a asp-action="Cart">Cart</a></button>
+            <button type="button"><a asp-action="Login">Log in</a></button>
+            <button type="button"><a asp-controller="Customer" asp-action="Register">Register</a></button>
+        </div>
+        <a asp-action="Index"><img id="catLogo" src="https://i.imgur.com/l8W3klT.png" alt="Cats&Plants Logo" /></a>
+    </header>
+    <div id="mainButtons">
+        <button type="button"><a asp-action="Plants">Plants</a></button>
+        <button type="button"><a asp-action="Vivariums">Vivariums</a></button>
+        <button type="button"><a asp-action="Stands">Stands</a></button>
+        <button type="button"><a asp-action="Supplies">Supplies</a></button>
+        <button type="button"><a asp-action="Gallery">Gallery</a></button>
+        <button type="button"><a asp-action="Maintenance">Maintenance</a></button>
+        <button type="button"><a asp-action="ContactUs">Contact Us</a></button>
+    </div> <br />
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2021 - CatsAndPlants - <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+        </div>
+    </footer>
+</body>
+</html>

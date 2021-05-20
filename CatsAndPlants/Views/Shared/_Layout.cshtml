@@ -6,38 +6,37 @@
     <title>@ViewData["Title"] - CatsAndPlants</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/custom.css" />
 </head>
 <body>
+    
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">CatsAndPlants</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+        <div class="btn-group-lg" id="headButtons">
+            <button type="button"><a asp-action="Cart">Cart</a></button>
+            <button type="button"><a asp-action="Login">Log in</a></button>
+            <button type="button"><a asp-controller="Customer" asp-action="Register">Register</a></button>
+        </div>
+        <a asp-action="Index"><img id="catLogo" src="https://i.imgur.com/l8W3klT.png" alt="Cats&Plants Logo" /></a>
     </header>
+    <div id="mainButtons">
+        <button type="button"><a asp-action="Plants">Plants</a></button>
+        <button type="button"><a asp-action="Vivariums">Vivariums</a></button>
+        <button type="button"><a asp-action="Stands">Stands</a></button>
+        <button type="button"><a asp-action="Supplies">Supplies</a></button>
+        <button type="button"><a asp-action="Gallery">Gallery</a></button>
+        <button type="button"><a asp-action="Maintenance">Maintenance</a></button>
+        <button type="button"><a asp-action="ContactUs">Contact Us</a></button>
+    </div> <br />
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
+
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2021 - CatsAndPlants - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2021 - CatsAndPlants - <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
